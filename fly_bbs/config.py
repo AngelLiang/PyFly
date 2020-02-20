@@ -4,6 +4,7 @@ from flask_uploads import IMAGES
 
 class Dev:
     MONGO_URI = "mongodb://127.0.0.1:27017/pyfly"
+    # 邮箱
     MAIL_SERVER = os.getenv('MAIL_SERVER', 'smtp.qq.com')
     MAIL_PROT = 465
     MAIL_USE_TLS = True
@@ -12,11 +13,15 @@ class Dev:
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
     MAIL_DEBUG = True
     MAIL_SUBJECT_PREFIX = '[PyFly]-'
+    # 表单
     WTF_CSRF_ENABLED = False
+    # 上传文件
     UPLOADED_PHOTOS_ALLOW = IMAGES
     UPLOADED_PHOTOS_DEST = os.path.join(os.getcwd(), 'uploads')
+    # 搜索索引文件路径
     WHOOSH_PATH = os.path.join(os.getcwd(), 'whoosh_indexes')
 
+    # 缓存
     USE_CACHE = True
     # CACHE_TYPE = 'redis'
     CACHE_TYPE = 'simple'
